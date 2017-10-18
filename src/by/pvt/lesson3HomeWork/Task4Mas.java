@@ -35,6 +35,9 @@ public class Task4Mas {
 			if (product == 0) {
 				break;
 			}
+			if(product > 10 || product < 0) {
+				continue;
+			}
 			System.out.print("amount: ");
 			float amount = scanFloat();
 
