@@ -53,7 +53,7 @@ public class Task6Mas {
 		}
 	}
 
-	private static int[] stToInt(String[] tempNumbers) {
+	public static int[] stToInt(String[] tempNumbers) {
 		int[] numbers = new int[tempNumbers.length];
 		for (int i = 0; i < tempNumbers.length; i++) {
 			numbers[i] = Integer.parseInt(tempNumbers[i]);

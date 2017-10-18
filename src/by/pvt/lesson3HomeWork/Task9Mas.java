@@ -10,31 +10,40 @@ package by.pvt.lesson3HomeWork;
 
 public class Task9Mas {
 	public static void main(String[] args) {
-		int[] mas = new int[] {0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,0,0,0,0,0,1,1,1};
+		int[] mas = new int[] {1,1,1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 };
+
+		String temp = compress(mas);
+
+		String[] tempMas = temp.split("/");
 		
-		String tempMas = "";
+		int[] result = Task6Mas.stToInt(tempMas);
+		System.out.println(temp);
+		Print.print(result);
+	}
+
+	public static String compress(int[] mas) {
 		int flag = 0;
-		
-		if(mas[0] == 1) {
-			tempMas += 0 + "/";
+		String temp = "";
+
+		if (mas[0] == 1) {
+			temp += 0 + "/";
 			flag = 1;
 		}
-		
+
 		int counter = 0;
-		for(int i = 0; i < mas.length; i++) {
-			if(i == mas.length-1) {
+		for (int i = 0; i < mas.length; i++) {
+			if (i == mas.length - 1) {
 				counter++;
 				flag = Math.abs(flag - 1);
 			}
-			if(mas[i] == flag) {
+			if (mas[i] == flag) {
 				counter++;
 			} else {
-				tempMas += counter + "/";
+				temp += counter + "/";
 				counter = 1;
 				flag = mas[i];
 			}
 		}
-		System.out.println(tempMas);
-		
+		return temp;
 	}
 }
