@@ -8,7 +8,7 @@ public class Task2Mas {
 	 */
 
 	public static void main(String[] args) {
-		int[] mas = new int[] { 1, 6, 7, -4, 10, 12 };
+		int[] mas = new int[] { 14,1, 6, 7, -4, 10, 12 };
 
 		Print.print(mas);
 
@@ -22,7 +22,7 @@ public class Task2Mas {
 	}
 
 	public static void change(int[] mas, int min) {
-		int number = 0;
+		int number;
 		for (int i = 0; i < mas.length; i++) {
 			if (mas[i] < 0 && mas[i] > min) {
 				min = mas[i];
@@ -39,8 +39,10 @@ public class Task2Mas {
 		for (int i : mas) {
 			if (i < min) {
 				min = i;
+				System.out.println(min);
 			}
 		}
+		
 		return min;
 	}
 }
