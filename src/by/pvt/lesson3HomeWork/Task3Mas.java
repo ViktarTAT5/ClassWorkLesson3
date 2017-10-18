@@ -11,7 +11,7 @@ public class Task3Mas {
 
 		int day = 14;
 		int month = 5;
-		int year = 2000;
+		int year = 2016;
 
 		int result = 0;
 
@@ -19,7 +19,7 @@ public class Task3Mas {
 			result += daysOfMonths[i];
 		}
 		result += day;
-		if (month == 2) {
+		if (month >= 2) {
 			if (leapYear(year)) {
 				result++;
 			}
