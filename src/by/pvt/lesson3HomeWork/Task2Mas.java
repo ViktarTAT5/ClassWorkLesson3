@@ -8,30 +8,37 @@ public class Task2Mas {
 	 */
 
 	public static void main(String[] args) {
-		int[] mas = new int[] { 14,1, 6, 7, -4, 10, 12 };
+		int[] mas = new int[] { 14, -4, 1, -6, 7, -4, 10, 12 };
 
 		Print.print(mas);
 
 		int min = minValue(mas);
 		if (min < 0) {
-			change(mas, min);
+			int max = maxValue(mas, min);
+			change(mas, max);
 			Print.print(mas);
 		} else {
 			System.out.println("Zero");
 		}
 	}
 
-	public static void change(int[] mas, int min) {
-		int number;
-		for (int i = 0; i < mas.length; i++) {
-			if (mas[i] < 0 && mas[i] > min) {
-				min = mas[i];
-				number = i;
+	public static void change(int[] mas, int max) {
+		int temp = mas[mas.length - 1];
+		mas[mas.length - 1] = max;
+		for (int i = 0; i < mas.length - 1; i++) {
+			if (mas[i] == max) {
+				mas[i] = temp;
 			}
 		}
-		int temp = mas[number];
-		mas[number] = mas[mas.length - 1];
-		mas[mas.length - 1] = temp;
+	}
+
+	public static int maxValue(int[] mas, int min) {
+		for (int i : mas) {
+			if (i > min && i < 0) {
+				min = i;
+			}
+		}
+		return min;
 	}
 
 	public static int minValue(int[] mas) {
@@ -39,10 +46,9 @@ public class Task2Mas {
 		for (int i : mas) {
 			if (i < min) {
 				min = i;
-				System.out.println(min);
 			}
 		}
-		
+
 		return min;
 	}
 }

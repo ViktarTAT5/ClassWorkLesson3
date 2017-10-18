@@ -10,14 +10,14 @@ package by.pvt.lesson3HomeWork;
 
 public class Task9Mas {
 	public static void main(String[] args) {
-		int[] mas = new int[] {1,1,1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 };
+		int[] mas = new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 };
 
 		String temp = compress(mas);
 
 		String[] tempMas = temp.split("/");
-		
+
 		int[] result = Task6Mas.stToInt(tempMas);
-		System.out.println(temp);
+		
 		Print.print(result);
 	}
 
